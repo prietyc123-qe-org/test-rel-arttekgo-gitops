@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: test-rel-arttekgo-gitops
+  description: This is GitOps manifest for test-rel-arttekgo   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: test-rel-arttekgo
+    backstage.io/kubernetes-id: test-rel-arttekgo 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: test-rel-arttekgo   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:test-rel-arttekgo
